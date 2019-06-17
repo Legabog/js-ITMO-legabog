@@ -1,4 +1,3 @@
-# JS-ITMO
 FUNC-001-
 FUNC-002-https://kodaktor.ru/func_ebb0e
 FUNC-003-https://kodaktor.ru/func_b2fe2
