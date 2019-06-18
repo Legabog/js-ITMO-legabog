@@ -1,1 +1,1 @@
-# JS-ITMO
+https://kodaktor.ru/ternary_87ec3
