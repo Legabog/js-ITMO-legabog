@@ -1,1 +1,1 @@
-# JS-ITMO
+# JavaScript-ITMO
