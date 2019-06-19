@@ -6,7 +6,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "repository": "https://github.com/Legabog/youtube",
-  "author": "Dosov Oleg,
+  "author": "Dosov Oleg",
   "license": "MIT",
   "engines": {
     "node": ">=8.5.0"
