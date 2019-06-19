@@ -5,8 +5,8 @@
   },
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://github.com/Chypa74/youtube-search",
-  "author": "Dmitry Shuvalov <mitiashuv74@mail.ru>",
+  "repository": "https://github.com/Legabog/youtube",
+  "author": "Dosov Oleg,
   "license": "MIT",
   "engines": {
     "node": ">=8.5.0"
