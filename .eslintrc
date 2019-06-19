@@ -1,0 +1,10 @@
+{
+  "extends": "rallycoding",
+  "env" :{
+     "browser": true
+  },
+  "rules": {
+    "no-alert": 0,
+ 
+  }
+}
