@@ -1,0 +1,112 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Draggable - Default functionality</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <style>
+  .draggable { width: 150px; height: 180px; padding: 0.5em;  padding-left: 50; border: 1px silver dashed; border-radius: 15px;}
+  .imge { width: 70px; height: 70px; padding: 0.5em;}
+  #d { width: 98%; height: 100px; border: 4px silver dashed; border-radius: 10px; padding: 10px; font-size: 40px}
+  #c { width: 98%; height: 100px;}
+  </style>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+   // const URI = 'https://kodaktor.ru/cart_data.json';
+  //  const x = await fetch(URI).then(x=>x.json());
+    
+  $( function() {
+      let temp;
+      let perm = "";
+      let price;
+      startBud = $("#budg").html();
+
+    $( ".draggable" )
+    .draggable({
+      revert:true,
+      drag:function () {
+      //  alert($(this).attr('value'));
+        if ($(this).attr('value')==80){
+            price = 80;
+            temp = "<img src='img/1.jpg' class = 'imge' >";
+        }
+        if ($(this).attr('value')==150){
+            price = 150;
+            temp = "<img src='img/2.jpg' class = 'imge' >";
+        }
+        if ($(this).attr('value')==8){
+            price = 8;
+            temp = "<img src='img/3.jpg' class = 'imge'>";
+        }
+
+      }
+
+    });
+
+
+    $("#d")
+    .droppable({
+      drop:function (event, ui) {
+      let b = $("#budg").html() - price;
+      if (b>=0){
+        perm = perm + temp;
+      let c = $("#count").html() - 0 + 1;
+      $("#budg").html(b);
+      $("#count").html(c);
+      //alert(temp);
+      $("#d").html(perm);
+    }else{
+      alert('Не хвататет денег');
+    }}
+    });
+
+
+    $('#bt1')
+    .click(function(){
+       $("#budg").html(startBud);
+       $("#count").html(0);
+       temp = "";
+       perm = "";
+       $("#d").html("");
+   });
+
+  } );
+  </script>
+</head>
+<body>
+
+
+<div class="draggable" style="float: left;" value = "80" id="dr1" >
+  <p>HDD</p>
+  <img src="img/1.jpg" class = "imge" alt="">
+  <p>80</p>
+</div>
+<div class="draggable" style="float: left;" value = "150" id="dr2" >
+  <p>SDD</p>
+  <img src="img/2.jpg" class = "imge" alt="">
+  <p>150</p>
+</div>
+<div class="draggable" style="float: left;" value = "8" id="dr3">
+  <p>USB</p>
+  <img src="img/3.jpg" class = "imge" alt="">
+  <p>8</p>
+  <p><p>
+</div>
+
+<div id="c"></div>
+<div id="c"></div>
+<div id="c"></div>
+
+<button id="bt1" style="float:right" >Clear</button>
+<div id="d"></div>
+
+<p>Остаток</p><p id="budg" >1000</p>
+<p>Товаров</p><p id="count">0</p>
+
+
+</body>
+</html>
